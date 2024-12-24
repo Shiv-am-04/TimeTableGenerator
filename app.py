@@ -7,7 +7,11 @@ from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
-groq_api = os.getenv('GROQ_API_KEY')
+groq_api_key = os.getenv('GROQ_API_KEY')
+
+# using llama3 vision model with groq api 
+
+llm = ChatGroq(model='llama-3.2-90b-vision-preview',groq_api_key=groq_api_key)
 
 st.set_page_config('Time Table Creator')
 
@@ -57,17 +61,12 @@ prompt = PromptTemplate(
 )
 
 
-# using llama3 vision model with groq api 
-
-llm = ChatGroq(model='llama-3.2-90b-vision-preview',groq_api_key=groq_api)
-
-
 # creating the chain 
 
 chain = prompt|llm|StrOutputParser()
 
 
-user_input = st.text_input(label='***Give Details***',placeholder='Provide detail regarding time interval,lunch break,assembly etc.')
+user_input = st.text_area(label='***Give Details***',placeholder='Provide detail regarding time interval,lunch break,assembly etc.')
 
 
 timetable_format = '''
