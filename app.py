@@ -59,7 +59,7 @@ prompt = PromptTemplate(
 
 # using llama3 vision model with groq api 
 
-llm = ChatGroq(model='llama-3.2-90b-vision-preview',api_key=groq_api)
+llm = ChatGroq(model='llama-3.2-90b-vision-preview',groq_api_key=groq_api)
 
 
 # creating the chain 
