@@ -1,0 +1,10 @@
+langchain
+python-dotenv
+langchain_community
+pypdf
+langchain-text-splitters
+langchain_huggingface
+langchain_groq
+pytube
+pdf2image
+streamlit
